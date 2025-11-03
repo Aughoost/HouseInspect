@@ -68,44 +68,26 @@
       mobileMenu.classList.toggle('hidden');
     });
 
-    // Select all nav links (desktop + mobile)
-    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    // Active link highlighting (desktop + mobile)
+    const navLinks = document.querySelectorAll('.nav-link');
 
-    function setActiveLink(targetHash) {
-      navLinks.forEach(link => {
-        const isActive = link.getAttribute('href') === targetHash;
-        link.classList.toggle('text-purple-700', isActive);
-        link.classList.toggle('font-semibold', isActive);
-        link.classList.toggle('text-gray-700', !isActive);
-      });
-    }
-
-    // Click handler
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
-        const targetHash = link.getAttribute('href');
-        setActiveLink(targetHash);
+        // Reset all links
+        navLinks.forEach(l => {
+          l.classList.remove('text-purple-700', 'font-semibold');
+          l.classList.add('text-gray-700', 'font-normal');
+        });
 
-        // Close mobile menu if open
+        // Highlight clicked link
+        link.classList.add('text-purple-700', 'font-semibold');
+        link.classList.remove('text-gray-700', 'font-normal');
+
+        // Close mobile menu if open (optional)
         if (!mobileMenu.classList.contains('hidden')) {
           mobileMenu.classList.add('hidden');
         }
       });
-    });
-
-    // Optional: highlight based on current scroll position
-    window.addEventListener('scroll', () => {
-      const sections = document.querySelectorAll('section[id]');
-      let current = '#top';
-
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 120;
-        if (pageYOffset >= sectionTop) {
-          current = `#${section.getAttribute('id')}`;
-        }
-      });
-
-      setActiveLink(current);
     });
   });
 </script>
