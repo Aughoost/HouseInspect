@@ -23,9 +23,9 @@
       animation: fadeInUp 1s ease-out forwards;
     }
 
-    .active-link {
+    /* .active-link {
       @apply text-purple-600 font-semibold;
-    }
+    } */
   </style>
 </head>
 
@@ -37,44 +37,7 @@
   </div>
 
   <!-- Header -->
-  <header class="fixed w-full bg-white shadow-md z-50">
-    <div class="container mx-auto flex items-center justify-between py-5 px-6 md:px-12">
-      <div class="text-3xl font-extrabold text-purple-700 tracking-tight cursor-pointer select-none">
-        Inspect <span class="text-gray-900">A Home</span>
-      </div>
-      <nav class="space-x-8 hidden md:flex font-medium text-gray-700">
-        <a href="#top" class="hover:text-purple-600 transition">Home</a>
-        <a href="#about" class="hover:text-purple-600 transition">About Us</a>
-        <a href="#services" class="hover:text-purple-600 transition">Services</a>
-        <a href="#find-inspector" class="hover:text-purple-600 transition">Find an Inspector</a>
-        <a href="#find-inspector" class="hover:text-purple-600 transition">Pricing</a>
-        <a href="#Testimonials" class="hover:text-purple-600 transition">Testimonials</a>
-      </nav>
-      <a href="#contact"
-        class="hidden md:inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold px-5 py-2 rounded-lg transition shadow-lg">Contact
-        Now</a>
-
-      <!-- Mobile Menu Button -->
-      <button class="md:hidden text-purple-700 focus:outline-none" aria-label="Toggle menu"
-        onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"></path>
-        </svg>
-      </button>
-    </div>
-    <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200 shadow-md">
-      <a href="#top" class="block px-6 py-3 hover:bg-purple-50 text-purple-700 font-semibold">Home</a>
-      <a href="#about" class="block px-6 py-3 hover:bg-purple-50">About Us</a>
-      <a href="#services" class="block px-6 py-3 hover:bg-purple-50">Services</a>
-      <a href="#portfolio" class="block px-6 py-3 hover:bg-purple-50">Inspection Types</a>
-      <a href="#blog" class="block px-6 py-3 hover:bg-purple-50">Pricing</a>
-      <a href="#contact"
-        class="block px-6 py-3 bg-purple-600 text-white font-semibold text-center rounded-b-lg mt-2 mx-4">Contact
-        Now</a>
-    </div>
-  </header>
-
+   <?php include 'view/navbar.php'; ?>
   <!-- Hero Section -->
   <section id="top"
   class="relative min-h-screen flex items-center pt-24 bg-gradient-to-r from-purple-600 via-pink-600 to-pink-500 text-white overflow-hidden">
@@ -334,7 +297,7 @@
   </section>
 
 <!-- find a inspector section -->
-<section id="find-inspector" class="py-20 bg-gradient-to-b from-gray-50 to-white">
+<section id="find-inspector" class="pt-20 bg-gradient-to-b from-gray-50 to-white">
   <div class="container mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
     <!-- Left: Map -->
@@ -512,59 +475,49 @@
 
 
 <!-- Google reCAPTCHA API -->
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-<!-- Portfolio Section -->
-<!-- <section id="portfolio" class="py-20 bg-white">
-    <div class="container mx-auto px-6 md:px-12">
-      <div class="text-center mb-16 fade-in-up">
-        <h2 class="text-4xl font-extrabold text-gray-900">See What Our Agency <em
-            class="italic text-purple-600">Offers</em> & What We <span
-            class="text-pink-600 font-semibold">Provide</span></h2>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-        <div class="relative group rounded-lg overflow-hidden shadow-lg cursor-pointer">
-          <img src="assets/images/portfolio-01.jpg" alt="Interior Inspection"
-            class="w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-          <div
-            class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-lg font-semibold transition-opacity rounded-lg">
-            Interior Inspection</div>
-        </div>
-        <div class="relative group rounded-lg overflow-hidden shadow-lg cursor-pointer">
-          <img src="assets/images/portfolio-02.jpg" alt="Electrical Inspection"
-            class="w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-          <div
-            class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-lg font-semibold transition-opacity rounded-lg">
-            Electrical Inspection</div>
-        </div>
-        <div class="relative group rounded-lg overflow-hidden shadow-lg cursor-pointer">
-          <img src="assets/images/portfolio-03.jpg" alt="Plumbing Inspection"
-            class="w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-          <div
-            class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-lg font-semibold transition-opacity rounded-lg">
-            Plumbing Inspection</div>
-        </div>
-        <div class="relative group rounded-lg overflow-hidden shadow-lg cursor-pointer">
-          <img src="assets/images/portfolio-04.jpg" alt="Roofing Inspection"
-            class="w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-          <div
-            class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-lg font-semibold transition-opacity rounded-lg">
-            Roofing Inspection</div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
 
 
   <!-- Footer -->
- <footer class="bg-gray-900 text-gray-200 py-12">
-  
+<!-- FOOTER -->
+<footer class="bg-gray-800 text-gray-200 py-8">
+  <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+    <!-- About / Branding -->
+    <div>
+      <h3 class="text-xl font-bold text-white mb-2">Your Company</h3>
+      <p class="text-gray-400 text-sm">
+        Providing reliable inspection services with honesty and professionalism.  
+        Book your inspection quickly and easily.
+      </p>
+    </div>
+
+    <!-- Links -->
+    <div>
+      <h3 class="text-xl font-bold text-white mb-2">Quick Links</h3>
+      <ul class="space-y-1 text-gray-400 text-sm">
+        <li><a href="#" class="hover:text-purple-500 transition">Home</a></li>
+        <li><a href="#" class="hover:text-purple-500 transition">Services</a></li>
+        <li><a href="#" class="hover:text-purple-500 transition">Pricing</a></li>
+        <li><a href="#" class="hover:text-purple-500 transition">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <h3 class="text-xl font-bold text-white mb-2">Contact Us</h3>
+      <ul class="text-gray-400 text-sm space-y-1">
+        <li>Email: <a href="mailto:info@yourcompany.com" class="hover:text-purple-500 transition">info@yourcompany.com</a></li>
+        <li>Phone: <a href="tel:+1234567890" class="hover:text-purple-500 transition">+1 (234) 567-890</a></li>
+        <li>Address: 123 Main St, Your City</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="mt-8 border-t border-gray-700 pt-4 text-center text-gray-500 text-sm">
+    &copy; 2025 Your Company. All rights reserved.
+  </div>
 </footer>
-
-<script>
-
-</script>
 
   <script>
     // Hide preloader
@@ -656,12 +609,13 @@
 
 
 
-    const inspectors = {
+   const inspectors = {
   Auckland: [
     {
       name: "Garry Kasparov",
       title: "Senior Building Inspector",
       email: "info@inspecthouse.co.nz",
+      photo: "https://randomuser.me/api/portraits/men/1.jpg",
       about: "Garry is a Qualified Construction Manager and Quantity Surveyor with a wealth of experience in residential construction, renovating, and contracting. Gentle and accommodating, he provides first-class customer service.",
       qualifications: [
         "NZ Level 6- Diploma in Construction Management",
@@ -682,6 +636,7 @@
       name: "Nemo Zhou",
       title: "Building Inspector",
       email: "Nemo@inspecthouse.co.nz",
+      photo: "https://randomuser.me/api/portraits/men/2.jpg",
       about: "Nemo specializes in residential inspections with a focus on safety and compliance. Friendly and professional.",
       qualifications: [
         "NZ Diploma in Building Inspection",
@@ -698,6 +653,7 @@
       name: "José Raúl Capablanca",
       title: "Senior Inspector",
       email: "jose@inspecthouse.co.nz",
+      photo: "https://randomuser.me/api/portraits/men/3.jpg",
       about: "José Raúl Capablanca brings over 10 years of experience in commercial and residential inspections.",
       qualifications: [
         "NZ Diploma in Construction",
@@ -714,6 +670,7 @@
       name: "Robert James Fischer",
       title: "Construction Inspector",
       email: "robert@inspecthouse.co.nz",
+      photo: "https://randomuser.me/api/portraits/men/4.jpg",
       about: "Robert is highly skilled in earthquake-resilient building inspections and renovation projects.",
       qualifications: [
         "NZ Certificate in Building Inspection",
@@ -730,6 +687,7 @@
       name: "Mikhail Tal",
       title: "Building Inspector",
       email: "mikhail@inspecthouse.co.nz",
+      photo: "https://randomuser.me/api/portraits/men/5.jpg",
       about: "Mikhail focuses on timely and thorough inspections, ensuring client satisfaction every time.",
       qualifications: [
         "NZ Diploma in Construction Management",
@@ -744,9 +702,7 @@
 };
 
 
-
-
-    function showInspectors(modalId, region) {
+function showInspectors(modalId, region) {
   const modalContent = document.getElementById('modalContent');
   modalContent.innerHTML = ""; // Clear previous content
 
@@ -755,9 +711,20 @@
   regionInspectors.forEach(inspector => {
     const inspectorHTML = `
       <div class="bg-gray-50 border border-gray-200 rounded-lg p-5 shadow hover:shadow-lg transition">
-        <h3 class="text-xl font-bold text-gray-900 mb-1">${inspector.name}</h3>
-        <p class="text-md font-semibold text-gray-700 mb-1">${inspector.title}</p>
-        <p class="text-purple-600 font-medium mb-3">${inspector.email}</p>
+        
+        <!-- Flex container for photo + basic info -->
+        <div class="flex items-center gap-5 mb-4">
+          <div class="inspector-photo flex-shrink-0">
+            <img src="${inspector.photo || 'default-photo.jpg'}" alt="${inspector.name}" class="w-24 h-24 object-cover rounded-full">
+          </div>
+          <div class="inspector-info flex flex-col justify-center">
+            <h3 class="text-xl font-bold text-gray-900 mb-1">${inspector.name}</h3>
+            <p class="text-md font-semibold text-gray-700 mb-1">${inspector.title}</p>
+            <p class="text-purple-600 font-medium mb-0">${inspector.email}</p>
+          </div>
+        </div>
+
+        <!-- Rest of the info remains the same -->
         <h4 class="font-semibold text-gray-800 mb-1">About:</h4>
         <p class="text-gray-700 text-sm mb-3">${inspector.about}</p>
         <h4 class="font-semibold text-gray-800 mb-1">Qualifications:</h4>
@@ -776,6 +743,9 @@
   openModal(modalId);
 }
 
+
+
+    
   // testimonials
 
   // Footer form submission alert
